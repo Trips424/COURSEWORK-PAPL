@@ -27,17 +27,35 @@ Below is a quick guide for each option. For more information, you can refer to [
 **Firebase Studio:**
 
 - Access [idx.google.com](https://idx.google.com) with a personal Google account
-- Create a new workspace (template selection not needed for this coursework)
-- Clone your forked repository using the command palette
+- Create a new Flutter Workspace (choose the Flutter template in the "Start coding an app" section)
+- Once the Flutter Workspace is created, open the integrated terminal (View → Terminal) and link this project to your forked GitHub repository by running the following commands (replace `YOUR-USERNAME` in the URL):
 
-University Computers:
+  ```bash
+  rm -rf .git && git init && git remote add origin https://github.com/YOUR-USERNAME/union_shop.git && git fetch origin && git reset --hard origin/main
+  ```
+
+  This command should remove the existing Git history, initialize a new Git repository, add your forked repository as the remote named `origin`, fetch the data from it, and reset the local files to match the `main` branch of your forked repository. After running the above commands, open the Source Control view in Visual Studio Code and commit any local changes. This will create a commit that points to your forked repository. In the terminal you can push the commit to GitHub with:
+
+  ```bash
+  git push -u origin main
+  ```
+
+  If you're unsure that you're connected to the correct repository, check the remote with:
+
+  ```bash
+  git remote -v
+  ```
+
+  This should show the URL of your forked repository (`https://github.com/YOUR-USERNAME/union_shop.git` where `YOUR-USERNAME` is your GitHub username).
+
+**University Computers:**
 
 - Open [AppsAnywhere](https://appsanywhere.port.ac.uk/sso) and launch the following in the given order:
   - Git
   - Flutter And Dart SDK
   - Visual Studio Code
 
-Personal Windows Computer:
+**Personal Windows Computer:**
 
 - Install [Chocolatey package manager](https://chocolatey.org/install)
 - Run in PowerShell (as Administrator):
@@ -46,7 +64,7 @@ Personal Windows Computer:
   choco install git vscode flutter -y
   ```
 
-Personal macOS Computer:
+**Personal macOS Computer:**
 
 - Install [Homebrew package manager](https://brew.sh/)
 - Run in Terminal:
@@ -79,7 +97,13 @@ Note that the name of this created fork must be “union_shop”. If you already
 
 ### Clone Your Forked Repository
 
-If you are using Firebase Studio, head to [idx.google.com](https://idx.google.com), click on Import Repo and paste the URL of your forked repository. Name your workspace as `union_shop`.
+If you are using Firebase, access idx.google.com with a personal Google account. Create a new Flutter Workspace named `union_shop` (choose the Flutter template in the “Start coding an app” section). Once the Flutter Workspace is created, open the integrated terminal (View → Terminal) and link this project to your forked GitHub repository by running the following commands (replace YOUR-USERNAME in the URL): 
+
+```bash
+rm -rf .git && git init && git remote add origin https://github.com/YOUR-USERNAME/union_shop.git && git fetch origin && git reset --hard origin/main 
+```
+
+This command should remove the existing Git history, initialize a new Git repository, add your forked repository as the remote named origin, fetch the data from it. It should also reset the local files to match the main branch of your forked repository. After running the above commands, open the Source Control view and commit any local changes.  
 
 Otherwise, open a terminal, change to your desired directory, and run the following commands:
 
