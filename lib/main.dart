@@ -24,7 +24,7 @@ class UnionShopApp extends StatelessWidget {
       // In your browser, try this link: http://localhost:49856/#/product
       routes: {
         '/product': (context) => const ProductPage(),
-        /
+        '/about': (context) => const AboutUsPage(),
       },
     );
   }
@@ -187,6 +187,10 @@ class HomeScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: placeholderCallbackForButtons,
+                        onPressed: (){
+                          Navigator.pushNamed(context '/about');                   
+
+                        }
                         child: const Text(
                           'About Us',
                           style: TextStyle(color: Colors.white),
