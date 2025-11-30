@@ -160,6 +160,45 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+              color: Colors.blue,
+              child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      TextButton(
+                        onPressed: placeholderCallbackForButtons,
+                        child: const Text(
+                          'Home',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: placeholderCallbackForButtons,
+                        child: const Text(
+                          'Shop',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: placeholderCallbackForButtons,
+                        child: const Text(
+                          'About Us',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: placeholderCallbackForButtons,
+                        child: const Text(
+                          'Contact Us',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  )),
+            ),
+
             // Hero Section
             SizedBox(
               height: 400,
