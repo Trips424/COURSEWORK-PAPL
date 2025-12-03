@@ -182,7 +182,9 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: placeholderCallbackForButtons,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/product');
+                        },
                         child: const Text(
                           'Shop',
                           style: TextStyle(color: Colors.white),

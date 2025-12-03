@@ -18,16 +18,16 @@ class LoginPage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
 
-              TestField(
+              TextField(
                 decoration: InputDecoration(
-                  labelText: 'Email or Username',
+                  labelText: 'Username',
                   border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
 
               TextField(
-                decoration:InputDecoration(
+                decoration: InputDecoration(
                   labelText: "Password",
                   border: OutlineInputBorder(),
                 ),
@@ -39,17 +39,32 @@ class LoginPage extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: (
-                    
-                  )
-                )
-              )
+                  onPressed: () {},
+                  child: const Text('Log In'),  
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/signup');
+                },
+                child: const Text("Don't have an account? Sign Up"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 
 
 
 
-   
+
 
 
 
