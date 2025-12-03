@@ -172,7 +172,10 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       TextButton(
-                        onPressed: placeholderCallbackForButtons,
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, '/', (route) => false);
+                        },
                         child: const Text(
                           'Home',
                           style: TextStyle(color: Colors.white),
