@@ -195,6 +195,14 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
+                        onPressed: placeholderCallbackForButtons,
+                        child: const Text(
+                          'SALE!',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
+
+                      TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, '/about');
                         },
