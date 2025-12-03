@@ -17,7 +17,6 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 30),
-
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Username',
@@ -25,7 +24,6 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-
               TextField(
                 decoration: InputDecoration(
                   labelText: "Password",
@@ -34,18 +32,17 @@ class LoginPage extends StatelessWidget {
                 obscureText: true,
               ),
               const SizedBox(height: 20),
-
-
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Log In'),  
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/', (route) => false);
+                  },
+                  child: const Text('Log In'),
                 ),
               ),
-
               const SizedBox(height: 20),
-
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/signup');
@@ -59,17 +56,3 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
