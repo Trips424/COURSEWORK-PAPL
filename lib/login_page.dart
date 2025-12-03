@@ -22,8 +22,38 @@ class LoginPage extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: 'Email or Username',
                   border: OutlineInputBorder(),
-              )
+                ),
+              ),
               const SizedBox(height: 20),
+
+              TextField(
+                decoration:InputDecoration(
+                  labelText: "Password",
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true,
+              ),
+              const SizedBox(height: 20),
+
+
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: (
+                    
+                  )
+                )
+              )
+
+
+
+
+
+   
+
+
+
+
 
 
 
