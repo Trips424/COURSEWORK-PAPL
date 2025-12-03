@@ -224,6 +224,18 @@ class ProductPage extends StatelessWidget {
               ),
             ),
 
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+              color: Colors.orange,
+              child: TextButton(
+                onPressed: placeholderCallbackForButtons,
+                child: const Text(
+                  'Add to cart',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+
             // Footer
             Container(
               width: double.infinity,
