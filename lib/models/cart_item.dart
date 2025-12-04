@@ -28,4 +28,15 @@ class CartService {
       _items.add(CartItem(name: name, imageUrl: imageUrl, price: price));
     }
   }
+
+  double getTotal() {
+    return items.fold(0.0, (sum, item) {
+      final priceValue = double.tryParse(item.price.replaceAll('£', '')) ?? 0.0;
+      return sum + (priceValue * item.quantity);
+    });
+  }
+
+  void clearCart() {
+    items.clear();
+  }
 }
