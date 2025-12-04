@@ -18,3 +18,32 @@ class _CartPageState extends State<CartPage> {
         title: const Text("Your Cart"),
         backgroundColor: const Color(0xFF4d2963),
         foregroundColor: Colors.white,
+      ),
+      body: cart.items.isEmpty
+          ? const Center(
+              child: Text(
+              "Your cart is empty",
+              style: TextStyle(fontSize: 18),
+            ))
+          : Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: cart.items.length,
+                    itemBuilder: (context, index) {
+                      final item = cart.items[index];
+                      return ListTile(
+                        leading: Image.network(
+                          item.imageUrl,
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.cover,
+                        ),
+                        title: Text(item.name),
+                        subtitle: Text("${item.price}  × ${item.quantity}"),
+                      );
+                    },
+                  ),
+                ),
+
+
