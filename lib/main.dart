@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:union_shop/product_page.dart';
 import 'package:union_shop/about_us_page.dart';
 import 'package:union_shop/login_page.dart';
+import 'package:union_shop/footer.dart';
+import 'package:union_shop/sale_page.dart';
+import 'package:union_shop/signup_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -26,7 +29,9 @@ class UnionShopApp extends StatelessWidget {
       routes: {
         '/product': (context) => const ProductPage(),
         '/about': (context) => const AboutUsPage(),
-        '/login': (context) => const LoginPage()
+        '/login': (context) => const LoginPage(),
+        '/sale': (context) => const SaleScreen(),
+        '/signup': (context) => const SignUpPage(),
       },
     );
   }
@@ -186,7 +191,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/product');
+                          Navigator.pushNamed(context, '/shop');
                         },
                         child: const Text(
                           'Shop',
@@ -194,7 +199,9 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: placeholderCallbackForButtons,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/sale');
+                        },
                         child: const Text(
                           'SALE!',
                           style: TextStyle(color: Colors.white),
@@ -349,19 +356,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             // Footer
-            Container(
-              width: double.infinity,
-              color: Colors.grey[50],
-              padding: const EdgeInsets.all(24),
-              child: const Text(
-                'Placeholder Footer',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
+            const Footer(),
           ],
         ),
       ),

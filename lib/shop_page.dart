@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/products.dart';
+import 'package:union_shop/product_page.dart';
 
 class ShopPage extends StatelessWidget {
   const ShopPage({super.key});
@@ -9,19 +11,3 @@ class ShopPage extends StatelessWidget {
       appBar: AppBar(title: const Text("Shop")),
       body: GridView.builder(
         padding: const EdgeInsets.all(16),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          childAspectRatio: 0.75,
-        ),
-        itemCount: 4, // Example item count
-        itemBuilder: (context, index) {
-          return Card(
-            child: Center(child: Text('Product ${index + 1}')),
-          );
-        },
-      ),
-    );
-  }
-}
