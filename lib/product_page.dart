@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/models/products.dart';
+import 'package:union_shop/models/cart_item.dart';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
+  final String title;
+  final String price;
+  final String image;
+
+  const ProductPage({
+    super.key,
+    required this.title,
+    required this.price,
+    required this.image,
+  });
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
@@ -148,7 +159,7 @@ class ProductPage extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.network(
-                        'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                        image,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return Container(
@@ -179,9 +190,9 @@ class ProductPage extends StatelessWidget {
                   const SizedBox(height: 24),
 
                   // Product name
-                  const Text(
-                    'Placeholder Product Name',
-                    style: TextStyle(
+                  Text(
+                    title,
+                    style: const TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
@@ -191,9 +202,9 @@ class ProductPage extends StatelessWidget {
                   const SizedBox(height: 12),
 
                   // Product price
-                  const Text(
-                    '£15.00',
-                    style: TextStyle(
+                  Text(
+                    price,
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF4d2963),
@@ -228,7 +239,13 @@ class ProductPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
               color: Colors.orange,
               child: TextButton(
-                onPressed: placeholderCallbackForButtons,
+                onPressed: () {
+                  CartService().addToCart(name, imageUrl, price);
+                  
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Added to cart"))
+                  );
+                }
                 child: const Text(
                   'Add to cart',
                   style: TextStyle(color: Colors.white),
