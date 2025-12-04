@@ -5,6 +5,7 @@ import 'package:union_shop/login_page.dart';
 import 'package:union_shop/footer.dart';
 import 'package:union_shop/sale_page.dart';
 import 'package:union_shop/signup_page.dart';
+import 'package:union_shop/shop_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -32,6 +33,7 @@ class UnionShopApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/sale': (context) => const SaleScreen(),
         '/signup': (context) => const SignUpPage(),
+        '/shop': (context) => const ShopScreen(),
       },
     );
   }
