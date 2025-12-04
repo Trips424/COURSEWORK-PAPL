@@ -11,13 +11,35 @@ class TopNavbar extends StatelessWidget {
 
     return Container(
       color: Colors.white,
-      child:Column(
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-        )
-      )
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            color: Colors.blue,
+            child: const Text(
+              'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF! COME GRAB YOURS WHILE STOCK LASTS!',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white, fontSize: 16),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            child: Row(
+              children: [
+                // Logo
+                GestureDetector(
+                  onTap: () => onNavigate('/'),
+                  child: Image.network(
+                    'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
+                    height: 28,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
-    )
   }
 }
