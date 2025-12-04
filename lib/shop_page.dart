@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:union_shop/products.dart';
-import 'package:union_shop/product_page.dart';
+import 'package:union_shop/footer.dart';
 
-class ShopPage extends StatelessWidget {
-  const ShopPage({super.key});
+class ShopScreen extends StatelessWidget {
+  const ShopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Shop")),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(16),
+    final products = [
+      {
+        'title': 'UPSU Hoodie',
+        'price': '£29.99',
+        'image': 'https://via.placeholder.com/300x300?text=Hoodie'
+      },
+      {
+        'title': 'UPSU T-Shirt',
+        'price': '£14.99',
+        'image': 'https://via.placeholder.com/300x300?text=T-Shirt'
+      },
+      {
+        'title': 'UPSU Mug',
+        'price': '£6.99',
+        'image': 'https://via.placeholder.com/300x300?text=Mug'
+      },
+      {
+        'title': 'UPSU Tote Bag',
+        'price': '£9.99',
+        'image': 'https://via.placeholder.com/300x300?text=Tote+Bag'
+      },
+    ];
