@@ -45,5 +45,33 @@ class _CartPageState extends State<CartPage> {
                     },
                   ),
                 ),
-
-
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Total: £${cart.getTotal().toStringAsFixed(2)}",
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          cart.clearCart();
+                          setState(() {});
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("Order placed!"),
+                            ),
+                          );
+                        },
+                        child: const Text("Place Order"),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+    );
+  }
+}
