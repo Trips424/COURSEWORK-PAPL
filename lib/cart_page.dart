@@ -33,15 +33,58 @@ class _CartPageState extends State<CartPage> {
                     itemCount: cart.items.length,
                     itemBuilder: (context, index) {
                       final item = cart.items[index];
-                      return ListTile(
-                        leading: Image.network(
-                          item.imageUrl,
-                          width: 50,
-                          height: 50,
-                          fit: BoxFit.cover,
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 6, horizontal: 12),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.network(
+                              item.imageUrl,
+                              width: 60,
+                              height: 60,
+                              fit: BoxFit.cover,
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(item.name,
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  Text("${item.price} × ${item.quantity}"),
+                                ],
+                              ),
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.remove),
+                              onPressed: () {
+                                setState(() {
+                                  cart.decreaseQuantity(index);
+                                });
+                              },
+                            ),
+                            Text("${item.quantity}",
+                                style: const TextStyle(fontSize: 18)),
+                            IconButton(
+                              icon: const Icon(Icons.add),
+                              onPressed: () {
+                                setState(() {
+                                  cart.increaseQuantity(index);
+                                });
+                              },
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.close),
+                              onPressed: () {
+                                setState(() {
+                                  cart.removeItem(index);
+                                });
+                              },
+                            ),
+                          ],
                         ),
-                        title: Text(item.name),
-                        subtitle: Text("${item.price}  × ${item.quantity}"),
                       );
                     },
                   ),
