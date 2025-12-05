@@ -119,7 +119,7 @@ class Footer extends StatelessWidget {
                 Container(
                   height: 45,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  color: Color(0xFF4d2963),
+                  color: const Color(0xFF4d2963),
                   child: const Center(
                     child: Text(
                       "SUBSCRIBE",
