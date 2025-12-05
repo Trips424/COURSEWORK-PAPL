@@ -6,6 +6,7 @@ import 'package:union_shop/footer.dart';
 import 'package:union_shop/sale_page.dart';
 import 'package:union_shop/signup_page.dart';
 import 'package:union_shop/shop_page.dart';
+import 'package:union_shop/cart_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
