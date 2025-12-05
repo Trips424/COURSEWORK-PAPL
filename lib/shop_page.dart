@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/footer.dart';
 import 'package:union_shop/product_page.dart';
-import 'package:union_shop/models/products.dart';
 import 'package:union_shop/widgets/top_navbar.dart';
 
 class ShopScreen extends StatelessWidget {
@@ -33,8 +32,19 @@ class ShopScreen extends StatelessWidget {
       {
         'title': 'UPSU Water Bottle',
         'price': '£12.99',
-        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle'
+        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
       }
+      {
+        'title': 'UPSU Luxury Hoodie',
+        'price': '£12.99',
+        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
+      }
+      {
+        'title': 'UPSU Premium T-Shirt',
+        'price': '£12.99',
+        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
+      }
+      
     ];
 
     return Column(
