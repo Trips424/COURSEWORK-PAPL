@@ -44,10 +44,6 @@ class CartService {
     }
   }
 
-  void removeItem(int index) {
-    items.removeAt(index);
-  }
-
   double getTotal() {
     return items.fold(0.0, (sum, item) {
       final priceValue = double.tryParse(item.price.replaceAll('£', '')) ?? 0.0;
