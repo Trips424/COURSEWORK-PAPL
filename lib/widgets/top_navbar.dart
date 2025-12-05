@@ -43,7 +43,9 @@ class TopNavbar extends StatelessWidget {
                 Row(
                   children: [
                     _icon(Icons.search, () {}),
-                    _icon(Icons.person_outline, () {}),
+                    _icon(Icons.person_outline, () {
+                      onNavigate('/login');
+                    }),
                     _icon(Icons.shopping_bag_outlined, () {
                       onNavigate('/cart');
                     }),
