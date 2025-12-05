@@ -10,6 +10,9 @@ class CollectionProductsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final isMobile = width < 500;
+
     final collectionProducts = {
       'Hoodies': [
         {
