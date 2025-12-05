@@ -12,7 +12,6 @@ class Footer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ---------------- TOP SECTIONS ----------------
           LayoutBuilder(
             builder: (context, constraints) {
               bool isMobile = constraints.maxWidth < 700;
@@ -29,9 +28,7 @@ class Footer extends StatelessWidget {
                     );
             },
           ),
-
           const SizedBox(height: 40),
-
           const Text(
             "© 2025, upsu-store",
             style: TextStyle(color: Colors.black54, fontSize: 12),
@@ -43,7 +40,6 @@ class Footer extends StatelessWidget {
 
   List<Widget> _sections() {
     return [
-      // Opening Hours Section
       SizedBox(
         width: 260,
         child: Column(
@@ -74,8 +70,6 @@ class Footer extends StatelessWidget {
           ],
         ),
       ),
-
-      // Help & Information
       SizedBox(
         width: 200,
         child: Column(
@@ -93,8 +87,6 @@ class Footer extends StatelessWidget {
           ],
         ),
       ),
-
-      // Email Subscribe Box
       Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -124,7 +116,6 @@ class Footer extends StatelessWidget {
                   ),
                 ),
 
-                // Subscribe button
                 Container(
                   height: 45,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -148,7 +139,6 @@ class Footer extends StatelessWidget {
     ];
   }
 
-  // -------------- Dummy Footer Buttons --------------
   Widget _footerButton(String text) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 6),
