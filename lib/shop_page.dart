@@ -33,16 +33,26 @@ class ShopScreen extends StatelessWidget {
         'title': 'UPSU Water Bottle',
         'price': '£12.99',
         'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
-      }
+      },
       {
         'title': 'UPSU Luxury Hoodie',
         'price': '£12.99',
         'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
-      }
+      },
       {
         'title': 'UPSU Premium T-Shirt',
         'price': '£12.99',
         'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
+      },
+      {
+        'title': 'UPSU Varsity Jacket',
+        'price': '£12.99',
+        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle'
+      }
+      {
+        'title': 'UPSU Drawstring Bag',
+        'price': '£12.99',
+        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle'
       }
       
     ];
