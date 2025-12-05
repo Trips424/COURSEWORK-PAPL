@@ -82,3 +82,12 @@ class TopNavbar extends StatelessWidget {
     ];
   }
 
+  Widget _icon(IconData icon, VoidCallback onPressed) {
+    return IconButton(
+      icon: Icon(icon, size: 18, color: Colors.grey),
+      padding: const EdgeInsets.all(8),
+      constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
+      onPressed: onPressed,
+    );
+  }
+}
