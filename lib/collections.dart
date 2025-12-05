@@ -30,6 +30,30 @@ class CollectionsPage extends StatelessWidget {
           },
         ),
         
+        Expanded(
+          child: Scaffold(
+            body: Column(
+              children:[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.add(16.0),
+                    child: GridView.count(
+                      crossAxisCount:
+                          MediaQuery.of(context).size.width > 600 ? 2 : 1,
+                          crossAxisSpacing: 16,
+                          mainAxisSpacing: 16,
+                          childAspectRatio: 0.85,
+                          children: 
+
+
+                  )
+                )
+              ]
+            )
+            
+            )
+        )
       ]
-    )
+    );
   }
+}
