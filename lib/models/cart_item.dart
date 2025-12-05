@@ -20,12 +20,11 @@ class CartService {
   final List<CartItem> items = [];
 
   void addToCart(String name, String imageUrl, String price) {
-
-    final existing = items.where(item) => item.name == name).toList();
+    final existing = items.where((item) => item.name == name).toList();
     if (existing.isNotEmpty) {
       existing[0].quantity += 1;
     } else {
-      _items.add(CartItem(name: name, imageUrl: imageUrl, price: price));
+      items.add(CartItem(name: name, imageUrl: imageUrl, price: price));
     }
   }
 

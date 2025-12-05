@@ -34,21 +34,30 @@ class SaleScreen extends StatelessWidget {
       },
     ];
 
-    return Column(
-      children: [
-        TopNavbar(
-          onNavigate: (route) {
-            Navigator.pushNamed(context, route);
-          },
-        ),
-        Expanded(
-          child: Scaffold(
-            body: Column(
-              children: [
-                Expanded(
-                  child: Padding(
+    return Scaffold(
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            // whole page scrolls
+            child: ConstrainedBox(
+              // make page at least as tall as the screen
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // TOP NAVBAR
+                  TopNavbar(
+                    onNavigate: (route) {
+                      Navigator.pushNamed(context, route);
+                    },
+                  ),
+
+                  // MAIN CONTENT (grid) – shrinkWrap so it doesn't scroll by itself
+                  Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: GridView.count(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount:
                           MediaQuery.of(context).size.width > 600 ? 2 : 1,
                       crossAxisSpacing: 16,
@@ -67,8 +76,10 @@ class SaleScreen extends StatelessWidget {
                                   return Container(
                                     color: Colors.grey[300],
                                     child: const Center(
-                                      child: Icon(Icons.image_not_supported,
-                                          color: Colors.grey),
+                                      child: Icon(
+                                        Icons.image_not_supported,
+                                        color: Colors.grey,
+                                      ),
                                     ),
                                   );
                                 },
@@ -109,28 +120,13 @@ class SaleScreen extends StatelessWidget {
                       }),
                     ),
                   ),
-                ),
-
-                // Footer
-                Container(
-                  width: double.infinity,
-                  color: Colors.grey[50],
-                  padding: const EdgeInsets.all(24),
-                  child: const Text(
-                    'Placeholder Footer',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                const Footer(),
-              ],
+                  const Footer(),
+                ],
+              ),
             ),
-          ),
-        ),
-      ],
+          );
+        },
+      ),
     );
   }
 }
