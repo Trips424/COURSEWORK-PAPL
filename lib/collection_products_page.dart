@@ -116,8 +116,71 @@ class CollectionProductsPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final product = collectionProducts[index];
 
-
-
-    },
-
-
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ProductPage(
+                              title: product['title']!,
+                              price: product['price']!,
+                              image: product['image']!,
+                              description: product['description']!,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Card(
+                        elevation: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(6),
+                                child: Image.network(
+                                  product['image']!,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(isMobile ? 6 : 8),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    product['title']!,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: isMobile ? 16 : 18,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    product['price']!,
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: isMobile ? 13 : 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          const Footer(),
+        ],
+      ),
+    );
+  }
+}
