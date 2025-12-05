@@ -8,6 +8,7 @@ import 'package:union_shop/signup_page.dart';
 import 'package:union_shop/shop_page.dart';
 import 'package:union_shop/cart_page.dart';
 import 'package:union_shop/contact_us_page.dart';
+import 'package:union_shop/collections.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -43,6 +44,7 @@ class UnionShopApp extends StatelessWidget {
         '/shop': (context) => const ShopScreen(),
         '/cart': (context) => const CartPage(),
         '/contact': (context) => const ContactUsPage(),
+        '/collections': (context) => const CollectionsPage(),
       },
     );
   }
@@ -295,7 +297,9 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 32),
                         ElevatedButton(
-                          onPressed: placeholderCallbackForButtons,
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/collections');
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF4d2963),
                             foregroundColor: Colors.white,
