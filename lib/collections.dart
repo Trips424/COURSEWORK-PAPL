@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/widgets/top_navbar.dart';
 import 'package:union_shop/footer.dart';
+import 'collection_products_page.dart';
 
 class CollectionsPage extends StatelessWidget {
   const CollectionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final isMobile = width < 500;
+
     final collections = [
       {
         'title': 'Hoodies',
@@ -25,61 +29,72 @@ class CollectionsPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          // TOP NAVBAR
           TopNavbar(
             onNavigate: (route) {
               Navigator.pushNamed(context, route);
             },
           ),
-
-          // SCROLLABLE AREA (collections + footer)
           Expanded(
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  // COLLECTIONS GRID
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(isMobile ? 12 : 16),
                     child: GridView.count(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount:
-                          MediaQuery.of(context).size.width > 600 ? 2 : 1,
+                      crossAxisCount: isMobile ? 1 : 2,
                       crossAxisSpacing: 16,
                       mainAxisSpacing: 16,
-                      childAspectRatio: 0.85,
+                      childAspectRatio: isMobile ? 1 : 0.85,
                       children: List.generate(collections.length, (index) {
                         final collection = collections[index];
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Image.network(
-                                collection['image']!,
-                                fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Container(
-                                    color: Colors.grey[300],
-                                    child: const Center(
-                                      child: Icon(
-                                        Icons.broken_image,
-                                        size: 50,
-                                        color: Colors.grey,
-                                      ),
-                                    ),
-                                  );
-                                },
+
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => CollectionProductsPage(
+                                    title: collection['title']!),
                               ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              collection['title']!,
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                            );
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.network(
+                                    collection['image']!,
+                                    width: double.infinity,
+                                    fit: BoxFit.cover,
+                                    errorBuilder: (context, _, __) {
+                                      return Container(
+                                        color: Colors.grey[300],
+                                        child: const Center(
+                                          child: Icon(
+                                            Icons.broken_image,
+                                            size: 50,
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
                               ),
-                            ),
-                          ],
+                              SizedBox(height: isMobile ? 6 : 8),
+                              Text(
+                                collection['title']!,
+                                style: TextStyle(
+                                  fontSize: isMobile ? 16 : 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
                         );
                       }),
                     ),

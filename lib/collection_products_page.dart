@@ -18,77 +18,77 @@ class CollectionProductsPage extends StatelessWidget {
         {
           'title': 'UPSU Hoodie',
           'price': '£29.99',
-          'image': 'https://via.placeholder.com/300x300?text=Hoodie',
+          'image': '',
           'description': 'Warm and comfortable hoodie featuring UPSU branding.',
         },
         {
           'title': 'UPSU Luxury Hoodie',
           'price': '£39.99',
-          'image': 'https://via.placeholder.com/300x300?text=Luxury+Hoodie',
-          'description': 'Premium quality hoodie with stylish UPSU logo.',
+          'image': '',
+          'description': 'Premium fleece hoodie with a stylish UPSU logo.',
         },
       ],
       'T-Shirts': [
         {
           'title': 'UPSU T-Shirt',
           'price': '£14.99',
-          'image': 'https://via.placeholder.com/300x300?text=T-Shirt',
-          'description': 'Lightweight cotton T-shirt with UPSU branding.',
+          'image': '',
+          'description': 'Lightweight cotton tee with UPSU branding.',
         },
         {
           'title': 'UPSU Premium T-Shirt',
           'price': '£18.99',
-          'image': 'https://via.placeholder.com/300x300?text=Premium+T-Shirt',
-          'description': 'High-grade cotton shirt offering improved comfort.',
+          'image': '',
+          'description': 'Super-soft premium cotton tee.',
         },
         {
           'title': 'UPSU Varsity Jacket',
           'price': '£44.99',
-          'image': 'https://via.placeholder.com/300x300?text=Varsity+Jacket',
-          'description':
-              'Stylish varsity jacket with embroidered UPSU crest — a campus favourite.'
+          'image': '',
+          'description': 'Stylish varsity jacket with embroidered UPSU crest.',
         },
       ],
       'Accessories': [
         {
           'title': 'UPSU Mug',
           'price': '£6.99',
-          'image': 'https://via.placeholder.com/300x300?text=Mug',
+          'image': '',
           'description': 'Ceramic UPSU mug perfect for hot drinks.',
         },
         {
           'title': 'UPSU Keychain',
           'price': '£2.99',
-          'image': 'https://via.placeholder.com/300x300?text=Keychain',
+          'image': '',
           'description': 'Metal UPSU keychain — great for keys or bags.',
         },
         {
           'title': 'UPSU Drawstring Bag',
           'price': '£6.99',
-          'image': 'https://via.placeholder.com/300x300?text=Drawstring+Bag',
-          'description':
-              'Lightweight drawstring sports bag, ideal for gym, sports and uni essentials.'
+          'image':
+              'https://images.unsplash.com/photo-1586864387784-32404f0ef09d?auto=format&fit=crop&w=400&q=80',
+          'description': 'Lightweight drawstring bag for gym essentials.',
         },
         {
           'title': 'UPSU Wristband',
           'price': '£1.99',
-          'image': 'https://via.placeholder.com/300x300?text=Wristband',
-          'description':
-              'Silicone UPSU wristband — simple, stylish and perfect for events.'
+          'image':
+              'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80',
+          'description': 'Silicone UPSU wristband — stylish and simple.',
         },
         {
           'title': 'UPSU Beanie',
           'price': '£11.99',
-          'image': 'https://via.placeholder.com/300x300?text=Beanie',
-          'description':
-              'Soft knitted beanie hat to keep you warm during winter campus days.'
+          'image':
+              'https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=400&q=80',
+          'description': 'Soft beanie hat for winter on campus.',
         },
         {
           'title': 'UPSU Keychain',
           'price': '£2.99',
-          'image': 'https://via.placeholder.com/300x300?text=Keychain',
-          'description': 'Metal UPSU keychain — great for keys or backpacks.'
-        }
+          'image':
+              'https://images.unsplash.com/photo-1599940824397-a1b52a260cb2?auto=format&fit=crop&w=400&q=80',
+          'description': 'Metal UPSU keychain — great for backpacks.',
+        },
       ],
     }[title]!;
 
@@ -131,12 +131,14 @@ class CollectionProductsPage extends StatelessWidget {
                       },
                       child: Card(
                         elevation: 2,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Expanded(
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(6),
+                                borderRadius: BorderRadius.circular(8),
                                 child: Image.network(
                                   product['image']!,
                                   fit: BoxFit.cover,
@@ -144,7 +146,7 @@ class CollectionProductsPage extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(isMobile ? 6 : 8),
+                              padding: EdgeInsets.all(isMobile ? 6 : 10),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -152,17 +154,18 @@ class CollectionProductsPage extends StatelessWidget {
                                     product['title']!,
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: isMobile ? 16 : 18,
+                                      fontSize: isMobile ? 15 : 17,
                                     ),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),
-                                  const SizedBox(height: 4),
+                                  const SizedBox(height: 3),
                                   Text(
                                     product['price']!,
                                     style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: isMobile ? 13 : 14,
+                                      color: const Color(0xFF4d2963),
+                                      fontSize: isMobile ? 13 : 15,
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                 ],
