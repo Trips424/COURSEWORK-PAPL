@@ -13,6 +13,9 @@ class _CartPageState extends State<CartPage> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final isMobile = width < 500;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Your Cart"),
@@ -41,23 +44,31 @@ class _CartPageState extends State<CartPage> {
                           children: [
                             Image.network(
                               item.imageUrl,
-                              width: 60,
-                              height: 60,
+                              width: isMobile ? 45 : 60,
+                              height: isMobile ? 45 : 60,
                               fit: BoxFit.cover,
                             ),
-                            const SizedBox(width: 12),
+                            const SizedBox(width: 10),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(item.name,
-                                      style: const TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                  Text("${item.price} × ${item.quantity}"),
+                                      style: TextStyle(
+                                        fontSize: isMobile ? 14 : 16,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  Text(
+                                    "${item.price} × ${item.quantity}",
+                                    style: TextStyle(
+                                      fontSize: isMobile ? 13 : 14,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
                             IconButton(
+                              iconSize: isMobile ? 20 : 24,
                               icon: const Icon(Icons.remove),
                               onPressed: () {
                                 setState(() {
@@ -66,8 +77,11 @@ class _CartPageState extends State<CartPage> {
                               },
                             ),
                             Text("${item.quantity}",
-                                style: const TextStyle(fontSize: 18)),
+                                style: TextStyle(
+                                  fontSize: isMobile ? 15 : 18,
+                                )),
                             IconButton(
+                              iconSize: isMobile ? 20 : 24,
                               icon: const Icon(Icons.add),
                               onPressed: () {
                                 setState(() {
@@ -76,6 +90,7 @@ class _CartPageState extends State<CartPage> {
                               },
                             ),
                             IconButton(
+                              iconSize: isMobile ? 22 : 26,
                               icon: const Icon(Icons.close),
                               onPressed: () {
                                 setState(() {
