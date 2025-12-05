@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:union_shop/widgets/top_navbar.dart';
 import 'package:union_shop/footer.dart';
-import 'collection_products_page.dart';
+import 'package:union_shop/widgets/top_navbar.dart';
+import 'package:union_shop/product_page.dart';
 
-class CollectionsPage extends StatelessWidget {
-  const CollectionsPage({super.key});
+class CollectionProductsPage extends StatelessWidget {
+  final String title;
 
+  const CollectionProductsPage({super.key, required this.title});
+
+  
