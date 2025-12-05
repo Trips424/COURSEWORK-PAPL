@@ -22,21 +22,27 @@ class CollectionsPage extends StatelessWidget {
       },
     ];
 
-    return Column(
-      children: [
-        TopNavbar(
-          onNavigate: (route) {
-            Navigator.pushNamed(context, route);
-          },
-        ),
-        Expanded(
-          child: Scaffold(
-            body: Column(
-              children: [
-                Expanded(
-                  child: Padding(
+    return Scaffold(
+      body: Column(
+        children: [
+          // TOP NAVBAR
+          TopNavbar(
+            onNavigate: (route) {
+              Navigator.pushNamed(context, route);
+            },
+          ),
+
+          // SCROLLABLE AREA (collections + footer)
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  // COLLECTIONS GRID
+                  Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: GridView.count(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount:
                           MediaQuery.of(context).size.width > 600 ? 2 : 1,
                       crossAxisSpacing: 16,
@@ -78,13 +84,13 @@ class CollectionsPage extends StatelessWidget {
                       }),
                     ),
                   ),
-                ),
-                const Footer(),
-              ],
+                  const Footer(),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

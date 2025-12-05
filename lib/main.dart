@@ -406,6 +406,7 @@ class ProductCard extends StatelessWidget {
               title: title,
               price: price,
               image: imageUrl,
+              description: 'This is a placeholder description for the product.',
             ),
           ),
         );
