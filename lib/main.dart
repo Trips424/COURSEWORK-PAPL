@@ -228,7 +228,9 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: placeholderCallbackForButtons,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/contact');
+                        },
                         child: const Text(
                           'Contact Us',
                           style: TextStyle(color: Colors.white),
