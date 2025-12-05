@@ -19,6 +19,10 @@ class CartService {
 
   final List<CartItem> items = [];
 
+  void removeItem(int index) {
+    items.removeAt(index);
+  }
+
   void addToCart(String name, String imageUrl, String price) {
     final existing = items.where((item) => item.name == name).toList();
     if (existing.isNotEmpty) {
