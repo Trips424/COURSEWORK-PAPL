@@ -29,7 +29,12 @@ class UnionShopApp extends StatelessWidget {
       // When navigating to '/product', build and return the ProductPage
       // In your browser, try this link: http://localhost:49856/#/product
       routes: {
-        '/product': (context) => const ProductPage(),
+        '/product': (context) => ProductPage(
+              title: 'Placeholder Product Name',
+              price: '£15.00',
+              image:
+                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+            ),
         '/about': (context) => const AboutUsPage(),
         '/login': (context) => const LoginPage(),
         '/sale': (context) => const SaleScreen(),
