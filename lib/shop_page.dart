@@ -53,8 +53,10 @@ class ShopScreen extends StatelessWidget {
       },
       {
         'title': 'UPSU Premium T-Shirt',
-        'price': '£12.99',
-        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
+        'price': '£18.99',
+        'image': 'https://via.placeholder.com/300x300?text=Premium+T-Shirt',
+        'description':
+            'High-grade cotton T-shirt offering improved comfort and durability.'
       },
       {
         'title': 'UPSU Varsity Jacket',
@@ -92,24 +94,28 @@ class ShopScreen extends StatelessWidget {
       }
     ];
 
-    return Column(
-      children: [
-        // 🔝 Top Navbar (no appBar now)
-        TopNavbar(
-          onNavigate: (route) {
-            Navigator.pushNamed(context, route);
-          },
-        ),
+    return Scaffold(
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // TOP NAVBAR
+                  TopNavbar(
+                    onNavigate: (route) {
+                      Navigator.pushNamed(context, route);
+                    },
+                  ),
 
-        // 🔽 Page content
-        Expanded(
-          child: Scaffold(
-            body: Column(
-              children: [
-                Expanded(
-                  child: Padding(
+                  // CONTENT
+                  Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: GridView.count(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount:
                           MediaQuery.of(context).size.width > 600 ? 2 : 1,
                       crossAxisSpacing: 16,
@@ -126,6 +132,7 @@ class ShopScreen extends StatelessWidget {
                                   title: product['title']!,
                                   price: product['price']!,
                                   image: product['image']!,
+                                  description: product['description']!,
                                 ),
                               ),
                             );
@@ -141,8 +148,10 @@ class ShopScreen extends StatelessWidget {
                                     return Container(
                                       color: Colors.grey[300],
                                       child: const Center(
-                                        child: Icon(Icons.image_not_supported,
-                                            color: Colors.grey),
+                                        child: Icon(
+                                          Icons.image_not_supported,
+                                          color: Colors.grey,
+                                        ),
                                       ),
                                     );
                                   },
@@ -171,13 +180,14 @@ class ShopScreen extends StatelessWidget {
                       }),
                     ),
                   ),
-                ),
-                const Footer(),
-              ],
+
+                  const Footer(),
+                ],
+              ),
             ),
-          ),
-        ),
-      ],
+          );
+        },
+      ),
     );
   }
 }
