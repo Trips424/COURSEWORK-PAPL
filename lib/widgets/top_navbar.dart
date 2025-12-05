@@ -35,6 +35,20 @@ class TopNavbar extends StatelessWidget {
                     height: 28,
                   ),
                 ),
+                const Spacer(),
+                if (!isMobile)
+                  Row(
+                    children: _buildNavButtons(context),
+                  ),
+                Row(
+                  children: [
+                    _icon(Icons.search, () {}),
+                    _icon(Icons.person_outline, () {}),
+                    _icon(Icons.shopping_bag_outlined, () {
+                      onNavigate('/cart');
+                    }),
+                  ],
+                ),
               ],
             ),
           ),
@@ -42,4 +56,29 @@ class TopNavbar extends StatelessWidget {
       ),
     );
   }
-}
+
+  List<Widget> _buildNavButtons(BuildContext context) {
+    return [
+      TextButton(
+        onPressed: () => onNavigate('/'),
+        child: const Text('Home'),
+      ),
+      TextButton(
+        onPressed: () => onNavigate('/shop'),
+        child: const Text('Shop'),
+      ),
+      TextButton(
+        onPressed: () => onNavigate('/sale'),
+        child: const Text('Sale'),
+      ),
+      TextButton(
+        onPressed: () => onNavigate('/about'),
+        child: const Text('About Us'),
+      ),
+      TextButton(
+        onPressed: () => onNavigate('/contact'),
+        child: const Text('Contact Us'),
+      ),
+    ];
+  }
+
