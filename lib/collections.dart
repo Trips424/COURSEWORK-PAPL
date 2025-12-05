@@ -20,5 +20,16 @@ class CollectionsPage extends StatelessWidget {
         'title': 'Accessories',
         'image': 'https://via.placeholder.com/300x300?text=Mugs'
       },
-    ]
+    ];
+
+    return Column(
+      children: [
+        TopNavbar(
+          onNavigate: (route) {
+            Navigator.pushNamed(context,route);
+          },
+        ),
+        
+      ]
+    )
   }
