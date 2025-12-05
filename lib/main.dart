@@ -288,7 +288,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         const Text(
-                          "This is placeholder text for the hero section.",
+                          "From apparel to accessories, we've got something for everyone!",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
