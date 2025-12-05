@@ -6,6 +6,7 @@ class ProductPage extends StatelessWidget {
   final String title;
   final String price;
   final String image;
+  final String description;
 
   const ProductPage({
     super.key,
