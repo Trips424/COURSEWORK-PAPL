@@ -39,6 +39,22 @@ class CollectionProductsPage extends StatelessWidget {
           'description': 'High-grade cotton shirt offering improved comfort.',
         },
       ],
+          'Accessories': [
+        {
+          'title': 'UPSU Mug',
+          'price': '£6.99',
+          'image': 'https://via.placeholder.com/300x300?text=Mug',
+          'description': 'Ceramic UPSU mug perfect for hot drinks.',
+        },
+        {
+          'title': 'UPSU Keychain',
+          'price': '£2.99',
+          'image': 'https://via.placeholder.com/300x300?text=Keychain',
+          'description': 'Metal UPSU keychain — great for keys or bags.',
+        },
+      ],
+    }[title]!;
+
 
     },
 
