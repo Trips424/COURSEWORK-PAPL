@@ -40,11 +40,11 @@ class Footer extends StatelessWidget {
 
   List<Widget> _sections() {
     return [
-      SizedBox(
+      const SizedBox(
         width: 260,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
               "Opening Hours",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
