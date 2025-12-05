@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:union_shop/models/products.dart';
-import 'package:union_shop/models/cart_item.dart';
 import 'package:union_shop/footer.dart';
-
+import 'package:union_shop/models/cart_item.dart';
 
 class ProductPage extends StatelessWidget {
   final String title;
@@ -242,12 +240,11 @@ class ProductPage extends StatelessWidget {
               color: Colors.orange,
               child: TextButton(
                 onPressed: () {
-                  CartService().addToCart(name, imageUrl, price);
-                  
+                  CartService().addToCart(title, image, price);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("Added to cart"))
+                    const SnackBar(content: Text("Added to cart")),
                   );
-                }
+                },
                 child: const Text(
                   'Add to cart',
                   style: TextStyle(color: Colors.white),
@@ -256,10 +253,7 @@ class ProductPage extends StatelessWidget {
             ),
 
             // Footer
-
-                ),
-              ),
-            ),
+            const Footer(),
           ],
         ),
       ),
