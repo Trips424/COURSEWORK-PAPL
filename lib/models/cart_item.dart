@@ -17,7 +17,7 @@ class CartService {
   factory CartService() => _instance;
 
   CartService._internal();
-  final List<CartItem> _items = [];
+  final List<CartItem> items = [];
 
   void addToCart(String name, String imageUrl, String price) {
 
