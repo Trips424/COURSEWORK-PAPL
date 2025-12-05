@@ -55,6 +55,14 @@ class CollectionProductsPage extends StatelessWidget {
       ],
     }[title]!;
 
+        return Scaffold(
+      body: Column(
+        children: [
+          TopNavbar(
+            onNavigate: (route) => Navigator.pushNamed(context, route),
+          ),
+
+
 
     },
 
