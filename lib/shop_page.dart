@@ -12,32 +12,44 @@ class ShopScreen extends StatelessWidget {
       {
         'title': 'UPSU Hoodie',
         'price': '£29.99',
-        'image': 'https://via.placeholder.com/300x300?text=Hoodie'
+        'image': 'https://via.placeholder.com/300x300?text=Hoodie',
+        'description':
+            'Warm and comfortable hoodie featuring UPSU branding, ideal for campus and casual wear.'
       },
       {
         'title': 'UPSU T-Shirt',
         'price': '£14.99',
-        'image': 'https://via.placeholder.com/300x300?text=T-Shirt'
+        'image': 'https://via.placeholder.com/300x300?text=T-Shirt',
+        'description':
+            'Lightweight cotton T-shirt with UPSU logo—perfect for everyday wear.'
       },
       {
         'title': 'UPSU Mug',
         'price': '£6.99',
-        'image': 'https://via.placeholder.com/300x300?text=Mug'
+        'image': 'https://via.placeholder.com/300x300?text=Mug',
+        'description':
+            'Ceramic mug with UPSU print, great for hot drinks and desk use.'
       },
       {
         'title': 'UPSU Tote Bag',
         'price': '£9.99',
-        'image': 'https://via.placeholder.com/300x300?text=Tote+Bag'
+        'image': 'https://via.placeholder.com/300x300?text=Tote+Bag',
+        'description':
+            'Reusable canvas tote bag ideal for books, groceries, and essentials.'
       },
       {
         'title': 'UPSU Water Bottle',
         'price': '£12.99',
         'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
+        'description':
+            'Reusable water bottle ideal for sports, gym and daily hydration.'
       },
       {
         'title': 'UPSU Luxury Hoodie',
-        'price': '£12.99',
-        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle',
+        'price': '£39.99',
+        'image': 'https://via.placeholder.com/300x300?text=Luxury+Hoodie',
+        'description':
+            'Premium quality hoodie with soft fleece lining and stylish UPSU logo.'
       },
       {
         'title': 'UPSU Premium T-Shirt',
@@ -46,28 +58,37 @@ class ShopScreen extends StatelessWidget {
       },
       {
         'title': 'UPSU Varsity Jacket',
-        'price': '£12.99',
-        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle'
+        'price': '£44.99',
+        'image': 'https://via.placeholder.com/300x300?text=Varsity+Jacket',
+        'description':
+            'Stylish varsity jacket with embroidered UPSU crest — a campus favourite.'
       },
       {
         'title': 'UPSU Drawstring Bag',
-        'price': '£12.99',
-        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle'
+        'price': '£6.99',
+        'image': 'https://via.placeholder.com/300x300?text=Drawstring+Bag',
+        'description':
+            'Lightweight drawstring sports bag, ideal for gym, sports and uni essentials.'
       },
       {
         'title': 'UPSU Wristband',
-        'price': '£12.99',
-        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle'
+        'price': '£1.99',
+        'image': 'https://via.placeholder.com/300x300?text=Wristband',
+        'description':
+            'Silicone UPSU wristband — simple, stylish and perfect for events.'
       },
       {
         'title': 'UPSU Beanie',
-        'price': '£12.99',
-        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle'
+        'price': '£11.99',
+        'image': 'https://via.placeholder.com/300x300?text=Beanie',
+        'description':
+            'Soft knitted beanie hat to keep you warm during winter campus days.'
       },
       {
         'title': 'UPSU Keychain',
-        'price': '£12.99',
-        'image': 'https://via.placeholder.com/300x300?text=Water+Bottle'
+        'price': '£2.99',
+        'image': 'https://via.placeholder.com/300x300?text=Keychain',
+        'description': 'Metal UPSU keychain — great for keys or backpacks.'
       }
     ];
 
