@@ -11,7 +11,7 @@ class CollectionProductsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final collectionProducts = {
-       'Hoodies': [
+      'Hoodies': [
         {
           'title': 'UPSU Hoodie',
           'price': '£29.99',
@@ -25,7 +25,7 @@ class CollectionProductsPage extends StatelessWidget {
           'description': 'Premium quality hoodie with stylish UPSU logo.',
         },
       ],
-        'T-Shirts': [
+      'T-Shirts': [
         {
           'title': 'UPSU T-Shirt',
           'price': '£14.99',
@@ -38,8 +38,15 @@ class CollectionProductsPage extends StatelessWidget {
           'image': 'https://via.placeholder.com/300x300?text=Premium+T-Shirt',
           'description': 'High-grade cotton shirt offering improved comfort.',
         },
+        {
+          'title': 'UPSU Varsity Jacket',
+          'price': '£44.99',
+          'image': 'https://via.placeholder.com/300x300?text=Varsity+Jacket',
+          'description':
+              'Stylish varsity jacket with embroidered UPSU crest — a campus favourite.'
+        },
       ],
-          'Accessories': [
+      'Accessories': [
         {
           'title': 'UPSU Mug',
           'price': '£6.99',
@@ -52,6 +59,33 @@ class CollectionProductsPage extends StatelessWidget {
           'image': 'https://via.placeholder.com/300x300?text=Keychain',
           'description': 'Metal UPSU keychain — great for keys or bags.',
         },
+        {
+          'title': 'UPSU Drawstring Bag',
+          'price': '£6.99',
+          'image': 'https://via.placeholder.com/300x300?text=Drawstring+Bag',
+          'description':
+              'Lightweight drawstring sports bag, ideal for gym, sports and uni essentials.'
+        },
+        {
+          'title': 'UPSU Wristband',
+          'price': '£1.99',
+          'image': 'https://via.placeholder.com/300x300?text=Wristband',
+          'description':
+              'Silicone UPSU wristband — simple, stylish and perfect for events.'
+        },
+        {
+          'title': 'UPSU Beanie',
+          'price': '£11.99',
+          'image': 'https://via.placeholder.com/300x300?text=Beanie',
+          'description':
+              'Soft knitted beanie hat to keep you warm during winter campus days.'
+        },
+        {
+          'title': 'UPSU Keychain',
+          'price': '£2.99',
+          'image': 'https://via.placeholder.com/300x300?text=Keychain',
+          'description': 'Metal UPSU keychain — great for keys or backpacks.'
+        }
       ],
     }[title]!;
 
