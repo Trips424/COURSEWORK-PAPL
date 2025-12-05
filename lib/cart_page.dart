@@ -105,15 +105,17 @@ class _CartPageState extends State<CartPage> {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(isMobile ? 12 : 16),
                   child: Column(
                     children: [
                       Text(
                         "Total: £${cart.getTotal().toStringAsFixed(2)}",
-                        style: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: isMobile ? 18 : 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: isMobile ? 10 : 16),
                       ElevatedButton(
                         onPressed: () {
                           cart.clearCart();
@@ -124,7 +126,10 @@ class _CartPageState extends State<CartPage> {
                             ),
                           );
                         },
-                        child: const Text("Place Order"),
+                        child: Text(
+                          "Place Order",
+                          style: TextStyle(fontSize: isMobile ? 14 : 16),
+                        ),
                       ),
                     ],
                   ),
