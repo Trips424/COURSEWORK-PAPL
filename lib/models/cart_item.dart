@@ -2,7 +2,7 @@ class CartItem {
   final String name;
   final String imageUrl;
   final String price;
-  final int quantity;
+  int quantity;
 
   CartItem({
     required this.name,
