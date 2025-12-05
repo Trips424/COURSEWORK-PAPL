@@ -25,6 +25,21 @@ class CollectionProductsPage extends StatelessWidget {
           'description': 'Premium quality hoodie with stylish UPSU logo.',
         },
       ],
-    }
+        'T-Shirts': [
+        {
+          'title': 'UPSU T-Shirt',
+          'price': '£14.99',
+          'image': 'https://via.placeholder.com/300x300?text=T-Shirt',
+          'description': 'Lightweight cotton T-shirt with UPSU branding.',
+        },
+        {
+          'title': 'UPSU Premium T-Shirt',
+          'price': '£18.99',
+          'image': 'https://via.placeholder.com/300x300?text=Premium+T-Shirt',
+          'description': 'High-grade cotton shirt offering improved comfort.',
+        },
+      ],
+
+    },
 
 
