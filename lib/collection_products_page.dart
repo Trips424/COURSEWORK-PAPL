@@ -95,22 +95,21 @@ class CollectionProductsPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          TopNavbar(onNavigate: (route) {
-            Navigator.pushNamed(context, route);
-          }),
-
+          TopNavbar(
+            onNavigate: (route) => Navigator.pushNamed(context, route),
+          ),
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(isMobile ? 12 : 16),
                 child: GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: MediaQuery.of(context).size.width > 500 ? 2 : 1,
+                    crossAxisCount: isMobile ? 1 : 2,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
-                    childAspectRatio: 0.75,
+                    childAspectRatio: isMobile ? 1 : 0.75,
                   ),
                   itemCount: collectionProducts.length,
                   itemBuilder: (context, index) {
