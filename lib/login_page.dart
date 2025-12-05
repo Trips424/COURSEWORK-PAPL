@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:union_shop/signup_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
