@@ -22,9 +22,10 @@ class _CartPageState extends State<CartPage> {
       body: cart.items.isEmpty
           ? const Center(
               child: Text(
-              "Your cart is empty",
-              style: TextStyle(fontSize: 18),
-            ))
+                "Your cart is empty",
+                style: TextStyle(fontSize: 18),
+              ),
+            )
           : Column(
               children: [
                 Expanded(
