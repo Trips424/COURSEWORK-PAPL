@@ -15,17 +15,33 @@ class CartItem {
 class CartService {
   static final CartService _instance = CartService._internal();
   factory CartService() => _instance;
-
   CartService._internal();
+
   final List<CartItem> items = [];
 
   void addToCart(String name, String imageUrl, String price) {
     final existing = items.where((item) => item.name == name).toList();
     if (existing.isNotEmpty) {
-      existing[0].quantity += 1;
+      existing[0].quantity++;
     } else {
       items.add(CartItem(name: name, imageUrl: imageUrl, price: price));
     }
+  }
+
+  void increaseQuantity(int index) {
+    items[index].quantity++;
+  }
+
+  void decreaseQuantity(int index) {
+    if (items[index].quantity > 1) {
+      items[index].quantity--;
+    } else {
+      items.removeAt(index);
+    }
+  }
+
+  void removeItem(int index) {
+    items.removeAt(index);
   }
 
   double getTotal() {

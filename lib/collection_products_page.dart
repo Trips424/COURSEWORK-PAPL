@@ -8,7 +8,7 @@ class CollectionProductsPage extends StatelessWidget {
 
   const CollectionProductsPage({super.key, required this.title});
 
-   @override
+  @override
   Widget build(BuildContext context) {
     final collectionProducts = {
        'Hoodies': [
@@ -55,12 +55,29 @@ class CollectionProductsPage extends StatelessWidget {
       ],
     }[title]!;
 
-        return Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          TopNavbar(
-            onNavigate: (route) => Navigator.pushNamed(context, route),
-          ),
+          TopNavbar(onNavigate: (route) {
+            Navigator.pushNamed(context, route);
+          }),
+
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: MediaQuery.of(context).size.width > 500 ? 2 : 1,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                    childAspectRatio: 0.75,
+                  ),
+                  itemCount: collectionProducts.length,
+                  itemBuilder: (context, index) {
+                    final product = collectionProducts[index];
 
 
 
